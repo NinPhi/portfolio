@@ -2,9 +2,17 @@
   box-sizing: border-box;
 }
 
-.container {
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  /* background-color: palevioletred; */
+  width: 450px;
+  margin: 3rem auto;
 }
