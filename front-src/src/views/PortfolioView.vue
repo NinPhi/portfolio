@@ -1,21 +1,23 @@
 <script setup lang="ts">
 import SocialMedia from "../components/SocialMedia.vue";
+import ExperienceCard from "../components/ExperienceCard.vue";
+import ProjectCard from "../components/ProjectCard.vue";
 </script>
 
 <template>
-  <div class="container">
-    <div class="general">
-      <h1>Name Surname</h1>
-      <h2>Fullstack Software Engineer</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-      <div class="socials">
-        <SocialMedia />
-        <SocialMedia />
-        <SocialMedia />
-        <SocialMedia />
-        <SocialMedia />
-      </div>
+  <header>
+    <h1>Name Surname</h1>
+    <h2>Fullstack Software Engineer</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <div class="socials">
+      <SocialMedia />
+      <SocialMedia />
+      <SocialMedia />
+      <SocialMedia />
+      <SocialMedia />
     </div>
+  </header>
+  <div class="main">
     <section id="about">
       <div class="about">
         <h2>About</h2>
@@ -43,53 +45,19 @@ import SocialMedia from "../components/SocialMedia.vue";
       <div class="experience">
         <h2>Experience</h2>
         <div class="experience-list">
-          <div class="experience-card">
-            <p>Mar 2023 - Present</p>
-            <span>Position - Company</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              tempore repudiandae veritatis doloremque! Tempore quas iusto
-              perferendis eius minima praesentium eos provident, voluptatem
-              fugiat ea officia odio accusantium blanditiis doloremque.
-            </p>
-          </div>
-          <div class="experience-card">
-            <p>Mar 2023 - Present</p>
-            <span>Position - Company</span>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              tempore repudiandae veritatis doloremque! Tempore quas iusto
-              perferendis eius minima praesentium eos provident, voluptatem
-              fugiat ea officia odio accusantium blanditiis doloremque.
-            </p>
-          </div>
+          <ExperienceCard />
+          <ExperienceCard />
+          <ExperienceCard />
         </div>
       </div>
     </section>
     <section id="projects">
       <div class="projects">
         <h2>Projects</h2>
-        <div class="projects-list">
-          <div class="project-card">
-            <div class="thumbnail"></div>
-            <span>Project Title</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Doloribus est ab cupiditate explicabo deleniti blanditiis
-              corporis! Aliquam dolore aspernatur dolores quam, voluptatem atque
-              repudiandae adipisci fugiat, iure dolor iste harum.
-            </p>
-          </div>
-          <div class="project-card">
-            <div class="thumbnail"></div>
-            <span>Project Title</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Doloribus est ab cupiditate explicabo deleniti blanditiis
-              corporis! Aliquam dolore aspernatur dolores quam, voluptatem atque
-              repudiandae adipisci fugiat, iure dolor iste harum.
-            </p>
-          </div>
+        <div class="project-list">
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
         </div>
       </div>
     </section>
@@ -97,13 +65,29 @@ import SocialMedia from "../components/SocialMedia.vue";
 </template>
 
 <style scoped>
+header > h1 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+header > h2 {
+  font-size: 1.15rem;
+  line-height: 2rem;
+}
+
 .socials {
   display: flex;
 }
 
-.thumbnail {
-  width: 200px;
-  height: 120px;
-  background-color: black;
+section h2 {
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  margin-top: 5rem;
+  margin-bottom: 2rem;
 }
 </style>
