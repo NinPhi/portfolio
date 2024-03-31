@@ -1,26 +1,17 @@
 <script setup lang="ts">
-import SocialMedia from "../components/SocialMedia.vue";
-import ExperienceCard from "../components/ExperienceCard.vue";
-import ProjectCard from "../components/ProjectCard.vue";
+import PortfolioHeader from "@/components/portfolio/PortfolioHeader.vue";
+import PortfolioExperienceCard from "@/components/portfolio/PortfolioExperienceCard.vue";
+import PortfolioProjectCard from "@/components/portfolio/PortfolioProjectCard.vue";
 </script>
 
 <template>
-  <header>
-    <h1>Name Surname</h1>
-    <h2>Fullstack Software Engineer</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-    <div class="socials">
-      <SocialMedia />
-      <SocialMedia />
-      <SocialMedia />
-      <SocialMedia />
-      <SocialMedia />
-    </div>
-  </header>
+  <PortfolioHeader />
   <div class="main">
     <section id="about">
       <div class="about">
-        <h2>About</h2>
+        <div class="sticky-subheader">
+          <h2>About</h2>
+        </div>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga porro
           ducimus repellendus explicabo velit natus dolorem dignissimos sint!
@@ -43,21 +34,25 @@ import ProjectCard from "../components/ProjectCard.vue";
     </section>
     <section id="experience">
       <div class="experience">
-        <h2>Experience</h2>
+        <div class="sticky-subheader">
+          <h2>Experience</h2>
+        </div>
         <div class="experience-list">
-          <ExperienceCard />
-          <ExperienceCard />
-          <ExperienceCard />
+          <PortfolioExperienceCard />
+          <PortfolioExperienceCard />
+          <PortfolioExperienceCard />
         </div>
       </div>
     </section>
     <section id="projects">
       <div class="projects">
-        <h2>Projects</h2>
+        <div class="sticky-subheader">
+          <h2>Projects</h2>
+        </div>
         <div class="project-list">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          <PortfolioProjectCard />
+          <PortfolioProjectCard />
+          <PortfolioProjectCard />
         </div>
       </div>
     </section>
@@ -65,29 +60,45 @@ import ProjectCard from "../components/ProjectCard.vue";
 </template>
 
 <style scoped>
-header > h1 {
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+@media (min-width: 1024px) {
+  .main {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .main section {
+    padding-bottom: 5rem;
+  }
+
+  section .sticky-subheader {
+    opacity: 0;
+    height: 0;
+    margin: 0rem;
+    padding: 0rem;
+    overflow: hidden;
+  }
 }
 
-header > h2 {
-  font-size: 1.15rem;
-  line-height: 2rem;
+section {
+  padding-bottom: 3rem;
 }
 
-.socials {
-  display: flex;
+.sticky-subheader {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.886);
 }
 
-section h2 {
+.sticky-subheader h2 {
+  padding: 0;
+  margin: 0;
   font-size: 0.9rem;
   font-weight: 900;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-
-  margin-top: 5rem;
-  margin-bottom: 2rem;
 }
 </style>

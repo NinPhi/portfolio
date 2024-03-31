@@ -10,6 +10,15 @@ const router = createRouter({
       component: PortfolioView,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        top: 30,
+        el: to.hash,
+        behavior: "smooth",
+      };
+    }
+  },
 });
 
 export default router;
