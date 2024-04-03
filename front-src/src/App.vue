@@ -10,54 +10,38 @@ import { RouterView } from "vue-router";
 
 <style scoped>
 .container {
-  display: grid;
+  --vertical-space: 3rem;
+  --wide-mode-vertical-space: 0rem;
+  --horizontal-space: 1.5rem;
 
   margin-left: auto;
   margin-right: auto;
 
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
+  padding-left: var(--horizontal-space);
+  padding-right: var(--horizontal-space);
 
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
+  padding-top: var(--vertical-space);
+  padding-bottom: var(--vertical-space);
 }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 768px;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    --vertical-space: 5rem;
+    --horizontal-space: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 1024px;
-    grid-template-columns: 50% auto;
-
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 0rem;
-    padding-bottom: 0rem;
+    --vertical-space: 0rem;
+    --wide-mode-vertical-space: 6rem;
+    --horizontal-space: 6rem;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
     max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
   }
 }
 </style>
